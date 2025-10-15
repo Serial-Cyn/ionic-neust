@@ -1,0 +1,29 @@
+<ion-header [translucent]="true">
+  <ion-toolbar>
+    <ion-title>
+      Angular Directive
+    </ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content>
+
+  <ion-card style="max-width: 320px;">
+    <ion-card-title>
+      This is an Angular Directive example
+    </ion-card-title>
+    <ion-card-content>
+      <h2 *ngIf="showMessage">Hello, this message is shown using *ngIf directive!</h2>
+    </ion-card-content>
+  </ion-card>
+  <ion-button (click)="toggleMessage()">
+    Toggle Message
+  </ion-button>
+
+  <ion-select label="Select state" [(ngModel)]="showMessage">
+    <ion-select-option [value]="false">Hide</ion-select-option>
+    <ion-select-option [value]="true">Show</ion-select-option>
+  </ion-select>
+
+  
+</ion-content>
