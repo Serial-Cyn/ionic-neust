@@ -7,23 +7,35 @@
 </ion-header>
 
 <ion-content>
+  <ion-grid style="display: block; margin: auto; padding: 16px;">
+    <ion-row>
+      <ion-col size="4">
+        <ion-card style="width: 100%; height: 100px; padding: 16px;">
+          <ion-card-title>
+            Toggle the message to show it!
+          </ion-card-title>
+          <ion-card-content>
+            <h2 *ngIf="showMessage">Sir, palibre kape</h2>
+          </ion-card-content>
+        </ion-card>
+      </ion-col>
+    </ion-row>
 
-  <ion-card style="max-width: 320px;">
-    <ion-card-title>
-      This is an Angular Directive example
-    </ion-card-title>
-    <ion-card-content>
-      <h2 *ngIf="showMessage">Hello, this message is shown using *ngIf directive!</h2>
-    </ion-card-content>
-  </ion-card>
-  <ion-button (click)="toggleMessage()">
-    Toggle Message
-  </ion-button>
+    <ion-row>
+      <ion-col size="4" style="display: flex; justify-content: center; align-items: center;">
+        <ion-button (click)="toggleMessage()">
+          Toggle Message
+        </ion-button>
+      </ion-col>
+    </ion-row>
 
-  <ion-select label="Select state" [(ngModel)]="showMessage">
-    <ion-select-option [value]="false">Hide</ion-select-option>
-    <ion-select-option [value]="true">Show</ion-select-option>
-  </ion-select>
-
-  
+    <ion-row>
+      <ion-col size="4">
+        <ion-select label="Select state" [(ngModel)]="showMessage">
+          <ion-select-option [value]="false">Hide</ion-select-option>
+          <ion-select-option [value]="true">Show</ion-select-option>
+        </ion-select>
+      </ion-col>
+    </ion-row>
+  </ion-grid>
 </ion-content>
